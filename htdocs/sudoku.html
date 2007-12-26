@@ -1,0 +1,131 @@
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>A Simple Sudoku Puzzle Solver</title>
+</head>
+<body style="color: rgb(0, 0, 0); background-color: rgb(255, 255, 204);" alink="#000099" link="#000099" vlink="#990099">
+<h1 style="text-align: center;"><br> </h1>
+<h1 style="text-align: center;">I think I <span style="color: rgb(51, 102, 255);">CAN</span> crack some <a href="http://en.wikipedia.org/wiki/Sudoku">Sudoku</a> Puzzles</h1>
+<br>
+<hr style="width: 100%; height: 2px;"><br>
+<div style="text-align: center; color: rgb(102, 255, 153);">
+<h2>hmmm! let's try some?</h2>
+<span style="color: rgb(255, 102, 102);"><h2>Type in known numbers to play</h2></span><br>
+<div style="text-align: center;"><span
+ style="color: rgb(255, 102, 102);"></span><br>
+<form action="/cgi-bin/sudoku" method="post">
+<table style="background-color: rgb(200, 255, 255); margin-left: auto; margin-right: auto; width: 400px; text-align: center;" border="2" cellpadding="0" cellspacing="0">
+  <tbody>
+<tr border="5">
+<tr>
+<td border="5"style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="aa"></td>
+<td style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ab"></td>
+<td style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ac"></td>
+<td border="5"style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ad"></td>
+<td style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ae"></td>
+<td style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="af"></td>
+<td border="5"style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ag"></td>
+<td style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ah"></td>
+<td style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ai"></td>
+</tr>
+<tr border="0">
+<td border="5"style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ba"></td>
+<td style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="bb"></td>
+<td style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="bc"></td>
+<td border="5"style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="bd"></td>
+<td style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="be"></td>
+<td style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="bf"></td>
+<td border="5"style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="bg"></td>
+<td style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="bh"></td>
+<td style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="bi"></td>
+</tr>
+<tr>
+<td border="5"style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ca"></td>
+<td style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="cb"></td>
+<td style="background-color: rgb(180,60,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="cc"></td>
+<td border="5"style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="cd"></td>
+<td style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ce"></td>
+<td style="background-color: rgb(60,180,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="cf"></td>
+<td border="5"style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="cg"></td>
+<td style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ch"></td>
+<td style="background-color: rgb(120,120,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ci"></td>
+</tr>
+<tr border="5">
+<tr>
+<td border="5"style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="da"></td>
+<td style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="db"></td>
+<td style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="dc"></td>
+<td border="5"style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="dd"></td>
+<td style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="de"></td>
+<td style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="df"></td>
+<td border="5"style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="dg"></td>
+<td style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="dh"></td>
+<td style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="di"></td>
+</tr>
+<tr border="0">
+<td border="5"style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ea"></td>
+<td style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="eb"></td>
+<td style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ec"></td>
+<td border="5"style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ed"></td>
+<td style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ee"></td>
+<td style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ef"></td>
+<td border="5"style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="eg"></td>
+<td style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="eh"></td>
+<td style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ei"></td>
+</tr>
+<tr>
+<td border="5"style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fa"></td>
+<td style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fb"></td>
+<td style="background-color: rgb(240,0,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fc"></td>
+<td border="5"style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fd"></td>
+<td style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fe"></td>
+<td style="background-color: rgb(120,120,75); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ff"></td>
+<td border="5"style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fg"></td>
+<td style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fh"></td>
+<td style="background-color: rgb(180,60,100); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="fi"></td>
+</tr>
+<tr border="5">
+<tr>
+<td border="5"style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ga"></td>
+<td style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="gb"></td>
+<td style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="gc"></td>
+<td border="5"style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="gd"></td>
+<td style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ge"></td>
+<td style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="gf"></td>
+<td border="5"style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="gg"></td>
+<td style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="gh"></td>
+<td style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="gi"></td>
+</tr>
+<tr border="0">
+<td border="5"style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ha"></td>
+<td style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="hb"></td>
+<td style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="hc"></td>
+<td border="5"style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="hd"></td>
+<td style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="he"></td>
+<td style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="hf"></td>
+<td border="5"style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="hg"></td>
+<td style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="hh"></td>
+<td style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="hi"></td>
+</tr>
+<tr>
+<td border="5"style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ia"></td>
+<td style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ib"></td>
+<td style="background-color: rgb(120,120,175); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ic"></td>
+<td border="5"style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="id"></td>
+<td style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ie"></td>
+<td style="background-color: rgb(0,240,125); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="if"></td>
+<td border="5"style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ig"></td>
+<td style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ih"></td>
+<td style="background-color: rgb(60,180,150); text-align: center;"><input style="text-align: center" type=int size="1" maxlength="1" name="ii"></td>
+</tr>
+ </tbody>
+ </table><br>
+ <INPUT TYPE=submit value="Solve It!"> <INPUT TYPE=reset>
+</form>
+<br style="color: rgb(255, 102, 102);">
+<span style="color: rgb(255, 102, 102);"></span></div>
+<br style="color: rgb(255, 102, 102);">
+<hr style="width: 100%; height: 100%; height: 2px; color: rgb(255, 102, 102);">
+</div>
+</body>
+</html>

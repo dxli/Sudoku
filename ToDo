@@ -1,0 +1,2 @@
+It's better to have a puzzle generator.
+A naive approach to randomly fill in, until the resulting board is solvable, while reject the filling if the resulting board violate sudoku rules. Dynamic programming is needed.

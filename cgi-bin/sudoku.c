@@ -113,7 +113,7 @@ int main()
     for (i=0;i<9;i++){
         for (j=0;j<9;j++){
             if ( rules(i,j)== -1) {
-                printf("<h1 style=\"text-align: center;\"><span style=\"color: rgb(255,0,0); background-color: rgb(0,255,0);\">Leave me Alone! You Communist!</span></h1>\n");
+                printf("<h1 style=\"text-align: center;\"><span style=\"color: rgb(255,0,0); background-color: rgb(0,255,0);\">Invalid digit found at position (%d , %d )</span></h1>\n",i+1,j+1);
                 t0print();
                 exit(0);
             }

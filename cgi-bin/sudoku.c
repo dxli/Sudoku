@@ -10,7 +10,7 @@
 
 
 int rules(int,int);
-void t0print(),unique1();
+void t0print(int,int),unique1();
 int t0[9][9], tflag0[9][9],tflag[9][9],tset[9][9][9]; // to store the real possiblities
 
 struct rusage t_start,t_end;
@@ -114,7 +114,7 @@ int main()
         for (j=0;j<9;j++){
             if ( rules(i,j)== -1) {
                 printf("<h1 style=\"text-align: center;\"><span style=\"color: rgb(255,0,0); background-color: rgb(0,255,0);\">Invalid digit found at position (%d , %d )</span></h1>\n",i+1,j+1);
-                t0print();
+                t0print(i,j);
                 exit(0);
             }
         }
@@ -177,7 +177,7 @@ point0:
         */
 end_point:
         getrusage(RUSAGE_SELF,&t_end);
-        t0print();
+        t0print(-1,-1);
         exit(0);
 point1:
         do{
@@ -255,7 +255,7 @@ int rules(int x0,int y0)
 }
 
 
-void t0print()
+void t0print(int ix, int jy)
 {
     int i,j,k;
     int flag=0;
@@ -274,14 +274,23 @@ void t0print()
             kj = (kj+2)%3;
 
 
-            if (tflag0[i][j]==1) printf("<td style=\"text-align: center; background-color: rgb(%d, %d, %d);\"><span style=\"background-color: rgb(255,255,255);\">%1d</span></td>\n",60*(ki+kj),240-60*(ki+kj),125-25*(ki-kj),t0[i][j]);
+            if (tflag0[i][j]==1) {
+                    if ( i==ix && j==jy) 
+                    printf("<td style=\"text-align: center; background-color: rgb(%d, %d, %d);\"><span style=\"font-weight: bold; background-color: rgb(255,255,255);\">%1d</span></td>\n",60*(ki+kj),240-60*(ki+kj),125-25*(ki-kj),t0[i][j]);
+                    else
+                    printf("<td style=\"text-align: center; background-color: rgb(%d, %d, %d);\"><span style=\"background-color: rgb(255,255,255);\">%1d</span></td>\n",60*(ki+kj),240-60*(ki+kj),125-25*(ki-kj),t0[i][j]);
+            }
             else
                 if (t0[i][j]==0) {
                     printf("<td style=\"text-align: center; background-color: rgb(%d, %d, %d); color: rgb(255,0,0);\"><span style=\"background-color: rgb(255,255,255);\">%1d</span></td>\n",60*(ki+kj),240-60*(ki+kj),125-25*(ki-kj),t0[i][j]);
                     flag=1;
-                } else
+                } else {
+                    if ( i==ix && j==jy) 
+                    printf("<td style=\"text-align: center; background-color: rgb(%d, %d, %d); color: rgb(0,0,255);\"><span style=\"font-weight=bold; background-color: rgb(255,255,255);\">%1d</span></td>\n",60*(ki+kj),240-60*(ki+kj),125-25*(ki-kj),t0[i][j]);
+                    else
                     printf("<td style=\"text-align: center; background-color: rgb(%d, %d, %d); color: rgb(0,0,255);\"><span style=\"background-color: rgb(255,255,255);\">%1d</span></td>\n",60*(ki+kj),240-60*(ki+kj),125-25*(ki-kj),t0[i][j]);
             k+=t0[i][j];
+                }
         }
         if (k!=45) flag=1;
         printf("<td><span style=\"text-align: center; color: rgb(0,255,0);\">%1d</span></td></tr>\n",k);
